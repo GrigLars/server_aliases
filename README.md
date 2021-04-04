@@ -59,7 +59,7 @@ I then create the ```.ssh/config``` for the bash user with a template file, like
 
 ### Parse the yaml file to an aliases file with jinja2 in ansible
 
-There are a few ways you can do this.  First, dump to a file, like .bash_server_aliases from templates/ssh_aliases.j2
+There are a few ways you can do this.  First, dump to a file, like ```.bash_server_aliases``` from ```templates/ssh_aliases.j2```
 
     {% for server in vault_ssh_config %}
     alias {{ server.Name }}='ssh -i {{ server.Privatekey }} -p {{ server.Port }} {{ server.User }}@{{ server.Hostname }}'
